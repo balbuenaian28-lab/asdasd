@@ -1,0 +1,431 @@
+/* Variables para facilitar cambios de estilo */
+:root {
+    /* Colores de Argentina: Celeste, Blanco, Sol de Mayo */
+    --color-argentina-celeste: #75AADB; /* Celeste (Color principal/acento) */
+    --color-argentina-sol: #FFC300; /* Amarillo/Oro del Sol de Mayo (Éxito/Resaltado) */
+    --color-argentina-blanco: #f0f0f0; /* Blanco */
+
+    /* Adaptación del Tema Oscuro */
+    --color-primary: #1a1a1a; /* Fondo principal oscuro */
+    --color-secondary: #282828; /* Elementos secundarios, tarjetas */
+    
+    /* Variables de Uso General Actualizadas para usar colores argentinos */
+    --color-accent: var(--color-argentina-celeste); 
+    --color-text-light: var(--color-argentina-blanco);
+    --color-text-dark: #cccccc;
+    --font-heading: 'Oswald', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+    --border-radius: 8px;
+    --transition-speed: 0.3s ease-in-out;
+}
+
+/* Base, Reset y CORRECCIÓN CRÍTICA DE SCROLL */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; 
+    scroll-padding-top: 70px; 
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    line-height: 1.6;
+    overflow-x: hidden; 
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+/* El color de hover de a se actualizará a un celeste más oscuro */
+a:hover {
+    color: #4C82A8; 
+}
+
+/* Secciones Generales */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Títulos y subrayados usan el Celeste Argentino */
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--color-accent); 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--color-accent);
+    border-radius: 2px;
+}
+
+.content-section {
+    background-color: var(--color-secondary);
+    padding: 50px;
+    margin-bottom: 60px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Header/Hero Section */
+.hero-section {
+    position: relative;
+    height: 600px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    overflow: hidden; 
+}
+
+.hero-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* IMAGEN DE LA BANDERA ARGENTINA */
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg'); 
+    background-size: cover; 
+    background-position: center;
+    filter: brightness(0.6); 
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-family: var(--font-heading);
+    font-size: 4.5em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Botón de acción usa el Celeste Argentino */
+.cta-button {
+    background-color: var(--color-accent); 
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+    display: inline-block;
+}
+
+/* Hover del botón con sombra sutil de color Sol de Mayo (Se mantiene aquí por si lo quieres volver a usar, pero no se aplica en el footer) */
+.cta-button:hover {
+    background-color: #4C82A8; 
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(255, 195, 0, 0.4); 
+}
+
+/* Navegación */
+.navbar {
+    background-color: var(--color-secondary);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.nav-link {
+    display: block;
+    padding: 18px 25px;
+    color: var(--color-text-light);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: color var(--transition-speed);
+    position: relative;
+}
+
+/* Indicador y color de enlace activo/hover usa el Celeste Argentino */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-accent); 
+    transition: transform var(--transition-speed);
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+.nav-link:hover {
+    color: var(--color-accent); 
+}
+
+/* Acordeón para Folclore */
+.accordion-item {
+    margin-bottom: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.accordion-header {
+    background-color: #333;
+    color: var(--color-text-light);
+    padding: 18px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    text-align: left;
+    font-family: var(--font-heading);
+    font-size: 1.2em;
+    transition: background-color var(--transition-speed);
+}
+
+.accordion-header:hover {
+    background-color: #444;
+}
+
+/* Icono del acordeón usa el Celeste Argentino */
+.accordion-header .icon {
+    font-size: 1.5em;
+    transition: transform var(--transition-speed);
+    color: var(--color-accent); 
+}
+
+.accordion-item.active .accordion-header .icon {
+    transform: rotate(45deg); 
+}
+
+.accordion-content {
+    background-color: #3a3a3a;
+    padding: 0 25px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 500px; 
+    padding: 25px;
+}
+
+.content-image {
+    width: 100%;
+    height: 350px; 
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: center;
+    border-radius: var(--border-radius);
+    margin-top: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Minijuego de Penales "Messi Chutando" - Ajustes en el portero */
+.game-section { 
+    text-align: center;
+}
+
+.penalty-arena {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    height: 400px;
+}
+
+.campo-futbol {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #388e3c, #66bb6a); 
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.porteria {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 120px;
+    border: 5px solid white; 
+    border-top: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Portero - Sin animación idle y color base */
+.portero {
+    position: absolute;
+    width: 60px;
+    height: 80px;
+    background-color: #007bff; /* Color original del portero */
+    border-radius: 5px;
+    left: 50%;
+    bottom: 5px;
+    transform: translateX(-50%);
+    transition: all 0.5s ease-out; /* Velocidad de la atajada */
+    z-index: 3;
+}
+
+/* Animaciones del portero */
+.portero.move-left { transform: translateX(-150%) translateY(-10px); }
+.portero.move-center { transform: translateX(-50%); } /* Se queda en el centro */
+.portero.move-right { transform: translateX(50%) translateY(-10px); }
+
+
+.ball {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25px;
+    height: 25px;
+    background-color: white; 
+    border-radius: 50%;
+    border: 2px solid #333;
+    box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 255, 255, 0.5);
+    z-index: 4;
+    opacity: 0;
+    transition: all 0.5s ease-out;
+}
+
+/* El estilo del jugador (Messi) ha sido eliminado de aquí */
+
+/* Mensaje flotante de resultado */
+.game-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 30px;
+    border-radius: var(--border-radius);
+    color: white;
+    font-size: 2em;
+    font-family: var(--font-heading);
+    letter-spacing: 2px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 6;
+    pointer-events: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+/* Botones del juego */
+.kick-btn {
+    background-color: #007bff; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0 10px;
+    transition: background-color var(--transition-speed), transform 0.1s;
+}
+
+.kick-btn:hover:not(:disabled) {
+    background-color: #0056b3; 
+    transform: translateY(-2px);
+}
+
+/* Sección STEAM */
+.science-card {
+    background-color: #333;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    flex: 1 1 300px;
+    min-width: 250px;
+    text-align: center;
+    border-top: 5px solid var(--color-accent); /* Celeste como borde superior */
+    transition: border-color var(--transition-speed), transform var(--transition-speed);
+}
+
+/* Hover de la tarjeta */
+.science-card:hover {
+    border-top-color: var(--color-argentina-sol); 
+}
+
+.science-card h3 {
+    color: var(--color-argentina-celeste);
+    margin-bottom: 15px;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+}
+
+.science-icon {
+    width: 80px;
+    height: 80px;
+    margin: 15px auto 0;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    border: 3px solid var(--color-argentina-sol); /* Sol de Mayo */
+}
+
+/* Footer - El borde superior amarillo ha sido eliminado */
+.footer {
+    background-color: var(--color-secondary);
+    text-align: center;
+    padding: 20px 0;
+    color: var(--color-text-dark);
+    border-top: 3px solid var(--color-accent); /* Celeste */
+    margin-top: 40px;
+}
+
+/* Se mantienen otras clases como animaciones y media queries */

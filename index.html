@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARGENTINA: CULTURA, PASIÓN Y FUTURO | Proyecto STEAM</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1 class="animate-text">ARGENTINA: Legado y Vanguardia</h1>
+            <p class="animate-text delay-1">Explora la riqueza cultural, la pasión por el fútbol y el impulso tecnológico de nuestra nación.</p>
+            <a href="#folclore" class="cta-button animate-fade-in delay-2">DESCUBRIR MÁS</a>
+        </div>
+        <div class="hero-bg-image parallax"></div>
+    </header>
+
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="#folclore" class="nav-link">Folclore & Identidad</a></li>
+            <li><a href="#juegos" class="nav-link">El Juego de Messi</a></li>
+            <li><a href="#ciencia" class="nav-link">STEAM Argentino</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        
+       <section id="folclore" class="content-section scroll-fade-in">
+    <h2 class="section-title">✨ Tradiciones que nos Unen</h2>
+    <div class="accordion">
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span class="accordion-title">Música y Danza: Tango y Chamamé</span>
+                <span class="icon">+</span>
+            </button>
+            <div class="accordion-content">
+                <p>El **Tango**, nacido en los arrabales porteños, es la danza y música emblemática de Buenos Aires, declarado Patrimonio Cultural Inmaterial de la Humanidad. Es la expresión de la pasión, la nostalgia y la historia de una nación forjada en la inmigración. Por otro lado, el **Chamamé**, del litoral argentino, con sus raíces guaraníes y europeas, nos invita a un baile enérgico y alegre, un símbolo de la identidad correntina y misionera.</p>
+                <div class="content-image" style="background-image: url('./img/tango_chamame.jpg');"></div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span class="accordion-title">Gastronomía y Rituales: Mate y Asado</span>
+                <span class="icon">+</span>
+            </button>
+            <div class="accordion-content">
+                <p>El **Mate** es más que una infusión; es un ritual, un símbolo de amistad y compañerismo que se comparte en cada hogar argentino. La yerba mate, heredada de los guaraníes, se disfruta en una ronda, forjando lazos. El **Asado**, por su parte, es el plato nacional por excelencia. Una excusa perfecta para reunir a la familia y amigos alrededor de las brasas, donde la carne argentina de calidad incomparable es la protagonista.</p>
+                <div class="content-image" style="background-image: url('./img/mate_asado.jpg');"></div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span class="accordion-title">Festividades y Leyendas Vivas</span>
+                <span class="icon">+</span>
+            </button>
+            <div class="accordion-content">
+                <p>Argentina es rica en festividades que celebran su diversidad cultural. El **Carnaval de Humahuaca** en Jujuy, con sus diablos y ritos ancestrales, es una explosión de color y alegría que fusiona tradiciones indígenas, españolas y criollas. En la Patagonia, las leyendas del Gualicho y el Nahuelito (en el Lago Nahuel Huapi) mantienen viva la mística de la naturaleza y sus secretos.</p>
+                <div class="content-image" style="background-image: url('./img/carnaval_patagonia.jpg');"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="juegos" class="content-section scroll-fade-in game-section">
+    <h2 class="section-title">⚽ La Pasión del Juego de Fútbol</h2>
+    <p>La selección argentina, la **Albiceleste**, es un símbolo global de la pasión por el fútbol. ¡Pon a prueba tu suerte en el arco!</p>
+    
+    <div class="penalty-arena">
+        <div class="campo-futbol">
+            <div class="porteria">
+                <div id="portero-anim" class="portero"></div>
+            </div>
+            <div id="ball-anim" class="ball"></div>
+            <div id="message-overlay" class="game-message"></div>
+        </div>
+    </div>
+
+    <div id="resultado-penal" class="resultado-penal" style="margin-top: 20px; font-weight: bold; font-size: 1.5em;">
+        ¡Elige tu dirección para el tiro!
+    </div>
+
+    <div class="kick-controls">
+        <button class="kick-btn" onclick="lanzarPenal('left')">IZQUIERDA</button>
+        <button class="kick-btn" onclick="lanzarPenal('center')">CENTRO</button>
+        <button class="kick-btn" onclick="lanzarPenal('right')">DERECHA</button>
+    </div>
+</section>
+        
+        <section id="ciencia" class="content-section scroll-fade-in">
+            <h2 class="section-title">🔬 STEAM: Ciencia, Tecnología y Futuro</h2>
+            <p>Argentina es pionera en América Latina en diversas áreas de ciencia y tecnología (STEAM: Ciencia, Tecnología, Ingeniería, Arte y Matemáticas). El país lidera en desarrollo satelital, biotecnología y energía nuclear.</p>
+
+            <div class="science-cards">
+                <div class="science-card hover-grow">
+                    <h3>Biotecnología y Agro</h3>
+                    <p>Líderes en biotecnología aplicada a la agricultura, desarrollando cultivos resistentes y mejorando la producción alimentaria.</p>
+                    <div class="science-icon" style="background-image: url('https://via.placeholder.com/100x100/4CAF50/fff?text=BIO');"></div>
+                </div>
+                <div class="science-card hover-grow">
+                    <h3>Desarrollo Espacial</h3>
+                    <p>Con CONAE y VENG, el país diseña y lanza satélites propios (ARSAT, SAOCOM), posicionándose en la carrera espacial regional.</p>
+                    <div class="science-icon" style="background-image: url('https://via.placeholder.com/100x100/2196F3/fff?text=ESPACIAL');"></div>
+                </div>
+                <div class="science-card hover-grow">
+                    <h3>Energía Nuclear</h3>
+                    <p>Desarrollo del ciclo completo del combustible nuclear y exportación de reactores de investigación, mostrando soberanía tecnológica.</p>
+                    <div class="science-icon" style="background-image: url('https://via.placeholder.com/100x100/FF5722/fff?text=NUCLEAR');</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Proyecto STEAM | Desarrollado con Pasión y Tecnología Argentina</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
